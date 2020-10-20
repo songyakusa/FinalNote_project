@@ -10,32 +10,9 @@ import com.example.finalnote_project.R
 import com.example.finalnote_project.databinding.FragmentMyteamBinding
 
 class Myteam : Fragment() {
-
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-
-        var binding = DataBindingUtil.inflate<FragmentMyteamBinding>(
-            inflater,
-            R.layout.fragment_myteam,
-            container,
-            false
-        )
-        setHasOptionsMenu(true)
-        return binding.root
-    }
-
-
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-        inflater.inflate(R.menu.menu, menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return NavigationUI.onNavDestinationSelected(
-            item,
-            view!!.findNavController()
-        ) || super.onOptionsItemSelected(item)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_myteam, container, false)
     }
 }

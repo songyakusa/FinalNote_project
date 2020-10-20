@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/add_list">
+
+    <fragment
+        android:id="@+id/add_list"
+        android:name="com.example.finalnote_project.menu.Addlist"
+        android:label="Aboutme"
+        tools:layout="@layout/fragment_addlist" >
+
+        <action
+            android:id="@+id/action_add_list_to_contactFragment"
+            app:destination="@id/contactFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/contactFragment"
+        android:name="com.example.finalnote_project.menu.Myteam"
+        android:label="Contact"
+        tools:layout="@layout/fragment_myteam" >
+        <action
+            android:id="@+id/action_contactFragment_to_add_list"
+            app:destination="@id/add_list" />
+    </fragment>
+</navigation>

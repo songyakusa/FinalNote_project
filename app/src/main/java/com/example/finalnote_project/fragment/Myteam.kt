@@ -1,4 +1,4 @@
-package com.example.finalnote_project.menu
+package com.example.finalnote_project.fragment
 
 import android.os.Bundle
 import android.view.*
@@ -7,19 +7,18 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.finalnote_project.R
-import com.example.finalnote_project.databinding.FragmentAddlistBinding
+import com.example.finalnote_project.databinding.FragmentMyteamBinding
 
-
-class Addlist : Fragment() {
+class Myteam : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        var binding = DataBindingUtil.inflate<FragmentAddlistBinding>(
+
+        var binding = DataBindingUtil.inflate<FragmentMyteamBinding>(
             inflater,
-            R.layout.fragment_addlist,
+            R.layout.fragment_myteam,
             container,
             false
         )
@@ -27,16 +26,16 @@ class Addlist : Fragment() {
         return binding.root
     }
 
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
-        inflater?.inflate(R.menu.menu, menu)
+        inflater.inflate(R.menu.menu, menu)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(
-            item!!,
+            item,
             view!!.findNavController()
         ) || super.onOptionsItemSelected(item)
     }
-
 }
